@@ -30,7 +30,6 @@
         <options>
           <option id="common.boards" value="Add" config="" content-id="Atmel.ASF" />
           <option id="common2.services.delay" value="Add" config="systick" content-id="Atmel.ASF" />
-          <option id="sam0.components.sensor.at30tse75x" value="Add" config="" content-id="Atmel.ASF" />
           <option id="sam0.drivers.extint" value="Add" config="callback" content-id="Atmel.ASF" />
           <option id="sam0.drivers.port" value="Add" config="" content-id="Atmel.ASF" />
           <option id="sam0.drivers.sercom.spi" value="Add" config="polled" content-id="Atmel.ASF" />
@@ -38,7 +37,7 @@
           <option id="sam0.drivers.system" value="Add" config="" content-id="Atmel.ASF" />
           <option id="sam0.drivers.tc" value="Add" config="callback" content-id="Atmel.ASF" />
           <option id="sam0.utils.stdio.stdio_serial" value="Add" config="" content-id="Atmel.ASF" />
-          <option id="sam0.drivers.tcc" value="Add" config="callback" content-id="Atmel.ASF" />
+          <option id="sam0.components.sensor.at30tse75x" value="Add" config="" content-id="Atmel.ASF" />
           <option id="common.utils" value="Add" config="" content-id="Atmel.ASF" />
           <option id="sam0.applications.getting-started" value="Add" config="" content-id="Atmel.ASF" />
           <option id="sam0.utils" value="Add" config="" content-id="Atmel.ASF" />
@@ -230,17 +229,6 @@
           <file path="src/ASF/sam0/drivers/sercom/i2c/i2c_master.h" framework="" version="3.17.0" source="sam0\drivers\sercom\i2c\i2c_master.h" changed="False" content-id="Atmel.ASF" />
           <file path="src/ASF/sam0/drivers/sercom/i2c/i2c_master_interrupt.h" framework="" version="3.17.0" source="sam0\drivers\sercom\i2c\i2c_master_interrupt.h" changed="False" content-id="Atmel.ASF" />
           <file path="src/ASF/sam0/drivers/sercom/i2c/i2c_common.h" framework="" version="3.17.0" source="sam0\drivers\sercom\i2c\i2c_common.h" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/tcc_callback.c" framework="" version="3.17.0" source="sam0\drivers\tcc\tcc_callback.c" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/tcc.c" framework="" version="3.17.0" source="sam0\drivers\tcc\tcc.c" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/quick_start_faultn/qs_tcc_faultn.h" framework="" version="3.17.0" source="sam0\drivers\tcc\quick_start_faultn\qs_tcc_faultn.h" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/quick_start_buffering/qs_tcc_buffering.h" framework="" version="3.17.0" source="sam0\drivers\tcc\quick_start_buffering\qs_tcc_buffering.h" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/quick_start_timer/qs_tcc_timer.h" framework="" version="3.17.0" source="sam0\drivers\tcc\quick_start_timer\qs_tcc_timer.h" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/quick_start_faultx/qs_tcc_faultx.h" framework="" version="3.17.0" source="sam0\drivers\tcc\quick_start_faultx\qs_tcc_faultx.h" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/quick_start_dma/qs_tcc_dma.h" framework="" version="3.17.0" source="sam0\drivers\tcc\quick_start_dma\qs_tcc_dma.h" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/tcc.h" framework="" version="3.17.0" source="sam0\drivers\tcc\tcc.h" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/quick_start_callback/qs_tcc_callback.h" framework="" version="3.17.0" source="sam0\drivers\tcc\quick_start_callback\qs_tcc_callback.h" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/quick_start/qs_tcc_basic.h" framework="" version="3.17.0" source="sam0\drivers\tcc\quick_start\qs_tcc_basic.h" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/tcc/tcc_callback.h" framework="" version="3.17.0" source="sam0\drivers\tcc\tcc_callback.h" changed="False" content-id="Atmel.ASF" />
         </files>
         <documentation help="http://asf.atmel.com/docs/3.17.0/sam0.applications.getting-started.samd21_xplained_pro/html/index.html" />
         <offline-documentation help="" />
@@ -261,7 +249,7 @@
         <InterfaceName>SWD</InterfaceName>
       </ToolOptions>
       <ToolType>com.atmel.avrdbg.tool.edbg</ToolType>
-      <ToolNumber>ATML2130021800000345</ToolNumber>
+      <ToolNumber>ATML2130021800000227</ToolNumber>
       <ToolName>EDBG</ToolName>
     </com_atmel_avrdbg_tool_edbg>
   </PropertyGroup>
@@ -285,7 +273,6 @@
       <Value>SYSTICK_MODE</Value>
       <Value>SPI_CALLBACK_MODE=false</Value>
       <Value>I2C_MASTER_CALLBACK_MODE=true</Value>
-      <Value>TCC_ASYNC=true</Value>
     </ListValues>
   </armgcc.compiler.symbols.DefSymbols>
   <armgcc.compiler.directories.DefaultIncludePath>False</armgcc.compiler.directories.DefaultIncludePath>
@@ -328,7 +315,6 @@
       <Value>../src/ASF/sam0/components/sensor/at30tse75x</Value>
       <Value>../src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21</Value>
       <Value>../src/ASF/sam0/drivers/sercom/i2c</Value>
-      <Value>../src/ASF/sam0/drivers/tcc</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
@@ -350,7 +336,7 @@
   </armgcc.linker.libraries.LibrarySearchPaths>
   <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
   <armgcc.linker.miscellaneous.LinkerFlags>-Wl,--entry=Reset_Handler -Wl,--cref -mthumb -T../src/ASF/sam0/utils/linker_scripts/samd21/gcc/samd21j18a_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
-  <armgcc.preprocessingassembler.general.AssemblerFlags>-DARM_MATH_CM0=true -DBOARD=SAMD21_XPLAINED_PRO -DEXTINT_CALLBACK_MODE=true -DSYSTICK_MODE -DTC_ASYNC=true -DUSART_CALLBACK_MODE=true -D__SAMD21J18A__ -DSPI_CALLBACK_MODE=false -DI2C_MASTER_CALLBACK_MODE=true -DTCC_ASYNC=true</armgcc.preprocessingassembler.general.AssemblerFlags>
+  <armgcc.preprocessingassembler.general.AssemblerFlags>-DARM_MATH_CM0=true -DBOARD=SAMD21_XPLAINED_PRO -DEXTINT_CALLBACK_MODE=true -DSYSTICK_MODE -DTC_ASYNC=true -DUSART_CALLBACK_MODE=true -D__SAMD21J18A__ -DSPI_CALLBACK_MODE=false -DI2C_MASTER_CALLBACK_MODE=true</armgcc.preprocessingassembler.general.AssemblerFlags>
   <armgcc.preprocessingassembler.general.DefaultIncludePath>False</armgcc.preprocessingassembler.general.DefaultIncludePath>
   <armgcc.preprocessingassembler.general.IncludePaths>
     <ListValues>
@@ -391,7 +377,6 @@
       <Value>../src/ASF/sam0/components/sensor/at30tse75x</Value>
       <Value>../src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21</Value>
       <Value>../src/ASF/sam0/drivers/sercom/i2c</Value>
-      <Value>../src/ASF/sam0/drivers/tcc</Value>
     </ListValues>
   </armgcc.preprocessingassembler.general.IncludePaths>
 </ArmGcc>
@@ -418,7 +403,6 @@
       <Value>EDGE_INTERRUPT</Value>
       <Value>SPI_CALLBACK_MODE=false</Value>
       <Value>I2C_MASTER_CALLBACK_MODE=true</Value>
-      <Value>TCC_ASYNC=true</Value>
     </ListValues>
   </armgcc.compiler.symbols.DefSymbols>
   <armgcc.compiler.directories.DefaultIncludePath>False</armgcc.compiler.directories.DefaultIncludePath>
@@ -463,7 +447,6 @@
       <Value>../src/ASF/sam0/components/sensor/at30tse75x</Value>
       <Value>../src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21</Value>
       <Value>../src/ASF/sam0/drivers/sercom/i2c</Value>
-      <Value>../src/ASF/sam0/drivers/tcc</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.OtherFlags>-fdata-sections</armgcc.compiler.optimization.OtherFlags>
@@ -487,7 +470,7 @@
   <armgcc.linker.memorysettings.ExternalRAM />
   <armgcc.linker.miscellaneous.LinkerFlags>-Wl,--entry=Reset_Handler -Wl,--cref -mthumb -T../src/ASF/sam0/utils/linker_scripts/samd21/gcc/samd21j18a_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
   <armgcc.assembler.debugging.DebugLevel>Default (-g)</armgcc.assembler.debugging.DebugLevel>
-  <armgcc.preprocessingassembler.general.AssemblerFlags>-DARM_MATH_CM0=true -DBOARD=SAMD21_XPLAINED_PRO -DEXTINT_CALLBACK_MODE=true -DSYSTICK_MODE -DTC_ASYNC=true -DUSART_CALLBACK_MODE=true -D__SAMD21J18A__ -DSPI_CALLBACK_MODE=false -DI2C_MASTER_CALLBACK_MODE=true -DTCC_ASYNC=true</armgcc.preprocessingassembler.general.AssemblerFlags>
+  <armgcc.preprocessingassembler.general.AssemblerFlags>-DARM_MATH_CM0=true -DBOARD=SAMD21_XPLAINED_PRO -DEXTINT_CALLBACK_MODE=true -DSYSTICK_MODE -DTC_ASYNC=true -DUSART_CALLBACK_MODE=true -D__SAMD21J18A__ -DSPI_CALLBACK_MODE=false -DI2C_MASTER_CALLBACK_MODE=true</armgcc.preprocessingassembler.general.AssemblerFlags>
   <armgcc.preprocessingassembler.general.DefaultIncludePath>False</armgcc.preprocessingassembler.general.DefaultIncludePath>
   <armgcc.preprocessingassembler.general.IncludePaths>
     <ListValues>
@@ -528,7 +511,6 @@
       <Value>../src/ASF/sam0/components/sensor/at30tse75x</Value>
       <Value>../src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21</Value>
       <Value>../src/ASF/sam0/drivers/sercom/i2c</Value>
-      <Value>../src/ASF/sam0/drivers/tcc</Value>
     </ListValues>
   </armgcc.preprocessingassembler.general.IncludePaths>
   <armgcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcc.preprocessingassembler.debugging.DebugLevel>
@@ -537,7 +519,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\" />
-    <Folder Include="src\application_specific\" />
     <Folder Include="src\ASF\" />
     <Folder Include="src\ASF\common2\" />
     <Folder Include="src\ASF\common2\services\" />
@@ -590,14 +571,6 @@
     <Folder Include="src\ASF\sam0\drivers\system\interrupt\system_interrupt_samd21\" />
     <Folder Include="src\ASF\sam0\drivers\system\pinmux\" />
     <Folder Include="src\ASF\sam0\drivers\system\pinmux\quick_start\" />
-    <Folder Include="src\ASF\sam0\drivers\tcc\" />
-    <Folder Include="src\ASF\sam0\drivers\tcc\quick_start\" />
-    <Folder Include="src\ASF\sam0\drivers\tcc\quick_start_buffering\" />
-    <Folder Include="src\ASF\sam0\drivers\tcc\quick_start_callback\" />
-    <Folder Include="src\ASF\sam0\drivers\tcc\quick_start_dma\" />
-    <Folder Include="src\ASF\sam0\drivers\tcc\quick_start_faultn\" />
-    <Folder Include="src\ASF\sam0\drivers\tcc\quick_start_faultx\" />
-    <Folder Include="src\ASF\sam0\drivers\tcc\quick_start_timer\" />
     <Folder Include="src\ASF\sam0\drivers\tc\" />
     <Folder Include="src\ASF\sam0\drivers\tc\quick_start\" />
     <Folder Include="src\ASF\sam0\drivers\tc\quick_start_callback\" />
@@ -656,54 +629,6 @@
     <None Include="src\ASF\sam0\drivers\sercom\spi\quick_start_master\qs_spi_master_basic.h">
       <SubType>compile</SubType>
     </None>
-    <Compile Include="src\application_specific\config.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\config.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\heartbeat.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\heartbeat.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\interface.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\interface.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\interrupts_sw.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\interrupts_sw.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\motors.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\motors.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\turret.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\turret.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\uart_BT.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\uart_BT.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\uart_PC.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\application_specific\uart_PC.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\ASF\sam0\components\sensor\at30tse75x\at30tse75x.c">
       <SubType>compile</SubType>
     </Compile>
@@ -749,42 +674,6 @@
     <None Include="src\config\conf_at30tse75x.h">
       <SubType>compile</SubType>
     </None>
-    <None Include="src\ASF\sam0\drivers\tcc\quick_start_faultn\qs_tcc_faultn.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\ASF\sam0\drivers\tcc\quick_start_buffering\qs_tcc_buffering.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\ASF\sam0\drivers\tcc\quick_start_timer\qs_tcc_timer.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\ASF\sam0\drivers\tcc\quick_start_faultx\qs_tcc_faultx.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\ASF\sam0\drivers\tcc\quick_start_dma\qs_tcc_dma.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\ASF\sam0\drivers\tcc\quick_start_callback\qs_tcc_callback.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\ASF\sam0\drivers\tcc\quick_start\qs_tcc_basic.h">
-      <SubType>compile</SubType>
-    </None>
-    <Compile Include="src\ASF\sam0\drivers\tcc\tcc.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <None Include="src\ASF\sam0\drivers\tcc\tcc.h">
-      <SubType>compile</SubType>
-    </None>
-    <Compile Include="src\ASF\sam0\drivers\tcc\tcc_callback.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <None Include="src\ASF\sam0\drivers\tcc\tcc_callback.h">
-      <SubType>compile</SubType>
-    </None>
-    <Compile Include="src\config\conf_motors.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="src\config\conf_wifi_m2m.h">
       <SubType>compile</SubType>
     </Compile>

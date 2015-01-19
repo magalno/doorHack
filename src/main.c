@@ -2,7 +2,7 @@
  *
  * \file
  *
- * \brief Wifi Door opener.
+ * \brief Wifi NMI temperature sensor demo.
  *
  * Copyright (c) 2014 Atmel Corporation. All rights reserved.
  *
@@ -65,14 +65,12 @@
  */
 
 #include "asf.h"
-#include "application_specific/uart_PC.h"
-#include "application_specific/config.h"
 #include "stdio_serial.h"
 #include "conf_uart_serial.h"
-#include "door.h"
+#include "demo.h"
 
 #define STRING_EOL    "\r\n"
-#define STRING_HEADER "-- Wifi Door opener --"STRING_EOL \
+#define STRING_HEADER "-- Wifi NMI temperature sensor demo --"STRING_EOL \
 		"-- "BOARD_NAME" --"STRING_EOL \
 		"-- Compiled: "__DATE__" "__TIME__" --"STRING_EOL
 
@@ -81,6 +79,25 @@ static struct usart_module cdc_uart_module;
 
 /** SysTick counter to avoid busy wait delay. */
 volatile uint32_t ms_ticks = 0;
+
+/**
+ *  Configure UART console.
+ */
+static void configure_console(void)
+{
+	struct usart_config usart_conf;
+
+	usart_get_config_defaults(&usart_conf);
+	usart_conf.mux_setting = CONF_STDIO_MUX_SETTING;
+	usart_conf.pinmux_pad0 = CONF_STDIO_PINMUX_PAD0;
+	usart_conf.pinmux_pad1 = CONF_STDIO_PINMUX_PAD1;
+	usart_conf.pinmux_pad2 = CONF_STDIO_PINMUX_PAD2;
+	usart_conf.pinmux_pad3 = CONF_STDIO_PINMUX_PAD3;
+	usart_conf.baudrate    = CONF_STDIO_BAUDRATE;
+
+	stdio_serial_init(&cdc_uart_module, CONF_STDIO_USART_MODULE, &usart_conf);
+	usart_enable(&cdc_uart_module);
+}
 
 /**
  * \brief SysTick handler used to measure precise delay. 
@@ -99,25 +116,25 @@ void SysTick_Handler(void)
  */
 int main(void)
 {
-	/*Initialize everything*/
-	config_application();
+	system_init();
 
-	/*Send welcome message over debug interface*/
-	uart_report("Turret command center: \n\r", UART_COLOR_WHITE);
+	/* Initialize the UART console. */
+	configure_console();
+
+	/* Initialize the delay driver. */
+	delay_init();
 	
 	/* Enable SysTick interrupt for non busy wait delay. */
 	if (SysTick_Config(system_cpu_clock_get_hz() / 1000)) {
-		uart_report("main: SysTick configuration error!", UART_COLOR_WHITE);
+		puts("main: SysTick configuration error!");
 		while (1);
 	}
 
 	/* Output example information */
-	uart_report(STRING_HEADER, UART_COLOR_WHITE);
+	puts(STRING_HEADER);
 
 	/* Start the demo task. */
-	door_start();
-	
-	while(1);
+	demo_start();
 	
 	return 0;
 }

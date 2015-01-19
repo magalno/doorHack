@@ -1,9 +1,10 @@
 /**
+ *
  * \file
  *
- * \brief SAMD21 USART configuration.
+ * \brief Wifi NMI temperature sensor demo.
  *
- * Copyright (C) 2013-2014 Atmel Corporation. All rights reserved.
+ * Copyright (c) 2014 Atmel Corporation. All rights reserved.
  *
  * \asf_license_start
  *
@@ -41,17 +42,32 @@
  *
  */
 
-#ifndef CONF_TEST_H
-#define CONF_TEST_H
+#ifndef DEMO_H_INCLUDED
+#define DEMO_H_INCLUDED
 
-#include <board.h>
-//! [conf_uart_serial_settings]
-#define CONF_STDIO_USART_MODULE  EDBG_CDC_MODULE
-#define CONF_STDIO_MUX_SETTING   EDBG_CDC_SERCOM_MUX_SETTING
-#define CONF_STDIO_PINMUX_PAD0   EDBG_CDC_SERCOM_PINMUX_PAD0
-#define CONF_STDIO_PINMUX_PAD1   EDBG_CDC_SERCOM_PINMUX_PAD1
-#define CONF_STDIO_PINMUX_PAD2   EDBG_CDC_SERCOM_PINMUX_PAD2
-#define CONF_STDIO_PINMUX_PAD3   EDBG_CDC_SERCOM_PINMUX_PAD3
-#define CONF_STDIO_BAUDRATE      115200
-//! [conf_uart_serial_settings]
-#endif // CONF_TEST_H
+#include "driver\include\m2m_wifi_types.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/** SSID and passphrase of the network to connect to. */
+#define DEMO_WLAN_SSID						"Atmel_Network"
+#define DEMO_WLAN_AUTH						M2M_WIFI_SEC_WPA_PSK
+#define	DEMO_WLAN_PSK						"AtmelFTW"
+
+
+/** Sensor demo configuration. */
+#define DEMO_PRODUCT_NAME					"NMITemp1"
+/* Using broadcast address for simplicity. */
+#define DEMO_SERVER_IP						"255.255.255.255"
+#define DEMO_SERVER_PORT					(6666)
+#define DEMO_REPORT_INTERVAL				(1000)
+
+void demo_start(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* DEMO_H_INCLUDED */
