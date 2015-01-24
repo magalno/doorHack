@@ -10,6 +10,8 @@ src\ASF\sam0\drivers\sercom\i2c\i2c_samd21_r21\i2c_master_interrupt.c
 
 src\ASF\sam0\drivers\sercom\spi\spi.c
 
+src\door.c
+
 src\wifi_nmi\host_drv\bsp\source\nm_bsp_samd21.c
 
 src\wifi_nmi\host_drv\bus_wrapper\source\nm_bus_wrapper_samd21.c

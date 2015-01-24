@@ -1,30 +1,15 @@
-src/demo.d src/demo.o: ../src/demo.c \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\string.h \
+src/door.d src/door.o: ../src/door.c ../src/door.h ../src/asf.h \
+ ../src/ASF/sam0/components/sensor/at30tse75x/at30tse75x.h \
+ ../src/ASF/sam0/utils/compiler.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stddef.h \
+ ../src/ASF/common/utils/parts.h ../src/ASF/sam0/utils/status_codes.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stdint.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\stdint.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\newlib.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\config.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\ieeefp.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\features.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\reent.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stddef.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\_types.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\_types.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\_default_types.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\lock.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\cdefs.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stdint.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\stdint.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\string.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\ctype.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\stdio.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stdarg.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\types.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\types.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\stdio.h \
- ../src/asf.h ../src/ASF/sam0/components/sensor/at30tse75x/at30tse75x.h \
- ../src/ASF/sam0/utils/compiler.h ../src/ASF/common/utils/parts.h \
- ../src/ASF/sam0/utils/status_codes.h \
  ../src/ASF/sam0/utils/preprocessor/preprocessor.h \
  ../src/ASF/sam0/utils/preprocessor/tpaste.h \
  ../src/ASF/sam0/utils/preprocessor/stringz.h \
@@ -95,6 +80,17 @@ src/demo.d src/demo.o: ../src/demo.c \
  ../src/ASF/sam0/utils/cmsis/samd21/include/instance/instance_usb.h \
  ../src/ASF/sam0/utils/cmsis/samd21/include/instance/instance_wdt.h \
  ../src/ASF/sam0/utils/cmsis/samd21/include/pio/pio_samd21j18a.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\stdio.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stdarg.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\reent.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\_types.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\_types.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\_default_types.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\lock.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\types.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\types.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\stdio.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\stdlib.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\alloca.h \
@@ -122,8 +118,11 @@ src/demo.d src/demo.o: ../src/demo.c \
  ../src/ASF/sam0/drivers/extint/extint_callback.h \
  ../src/ASF/sam0/drivers/extint/extint_callback.h \
  ../src/ASF/sam0/drivers/port/port.h \
- ../src/ASF/sam0/drivers/sercom/spi/spi.h ../src/config/conf_spi.h \
- ../src/ASF/sam0/drivers/sercom/usart/usart.h \
+ ../src/ASF/sam0/drivers/sercom/spi/spi.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\string.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\cdefs.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\string.h \
+ ../src/config/conf_spi.h ../src/ASF/sam0/drivers/sercom/usart/usart.h \
  ../src/ASF/sam0/drivers/sercom/usart/usart_interrupt.h \
  ../src/ASF/sam0/drivers/sercom/usart/usart.h \
  ../src/ASF/sam0/utils/stdio/stdio_serial/stdio_serial.h \
@@ -133,16 +132,25 @@ src/demo.d src/demo.o: ../src/demo.c \
  ../src/ASF/sam0/drivers/tc/tc_interrupt.h \
  ../src/ASF/sam0/drivers/tc/tc.h \
  ../src/ASF/sam0/drivers/sercom/i2c/i2c_master_interrupt.h \
- ../src/ASF/sam0/drivers/sercom/i2c/i2c_master.h ../src/demo.h \
- ../src/wifi_nmi/host_drv/driver\include\m2m_wifi_types.h \
- ../src/wifi_nmi/host_drv/common/include/nm_common.h \
- ../src/wifi_nmi/host_drv/bsp/include/nm_bsp.h \
- ../src/config/conf_wifi_m2m.h ../src/door.h \
- ../src/wifi_nmi/host_drv/driver/include/m2m_wifi.h \
- ../src/wifi_nmi/host_drv/common\include\nm_common.h \
- ../src/wifi_nmi/host_drv/socket/include/socket.h
+ ../src/ASF/sam0/drivers/sercom/i2c/i2c_master.h
 
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\string.h:
+../src/door.h:
+
+../src/asf.h:
+
+../src/ASF/sam0/components/sensor/at30tse75x/at30tse75x.h:
+
+../src/ASF/sam0/utils/compiler.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stddef.h:
+
+../src/ASF/common/utils/parts.h:
+
+../src/ASF/sam0/utils/status_codes.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stdint.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\stdint.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h:
 
@@ -153,50 +161,6 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\ieeefp.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\features.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\reent.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stddef.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\_types.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\_types.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\_default_types.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\lock.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\cdefs.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stdint.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\stdint.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\string.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\ctype.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\stdio.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stdarg.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\types.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\types.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\stdio.h:
-
-../src/asf.h:
-
-../src/ASF/sam0/components/sensor/at30tse75x/at30tse75x.h:
-
-../src/ASF/sam0/utils/compiler.h:
-
-../src/ASF/common/utils/parts.h:
-
-../src/ASF/sam0/utils/status_codes.h:
 
 ../src/ASF/sam0/utils/preprocessor/preprocessor.h:
 
@@ -338,6 +302,28 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu
 
 ../src/ASF/sam0/utils/cmsis/samd21/include/pio/pio_samd21j18a.h:
 
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\stdio.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.3\include\stdarg.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\reent.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\_types.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\_types.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\_default_types.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\lock.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\types.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\types.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\stdio.h:
+
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\stdlib.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\machine\stdlib.h:
@@ -400,6 +386,12 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu
 
 ../src/ASF/sam0/drivers/sercom/spi/spi.h:
 
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\string.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\cdefs.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu-toolchain\arm-none-eabi\include\sys\string.h:
+
 ../src/config/conf_spi.h:
 
 ../src/ASF/sam0/drivers/sercom/usart/usart.h:
@@ -423,21 +415,3 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1429\arm-gnu
 ../src/ASF/sam0/drivers/sercom/i2c/i2c_master_interrupt.h:
 
 ../src/ASF/sam0/drivers/sercom/i2c/i2c_master.h:
-
-../src/demo.h:
-
-../src/wifi_nmi/host_drv/driver\include\m2m_wifi_types.h:
-
-../src/wifi_nmi/host_drv/common/include/nm_common.h:
-
-../src/wifi_nmi/host_drv/bsp/include/nm_bsp.h:
-
-../src/config/conf_wifi_m2m.h:
-
-../src/door.h:
-
-../src/wifi_nmi/host_drv/driver/include/m2m_wifi.h:
-
-../src/wifi_nmi/host_drv/common\include\nm_common.h:
-
-../src/wifi_nmi/host_drv/socket/include/socket.h:

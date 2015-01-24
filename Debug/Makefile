@@ -140,6 +140,7 @@ C_SRCS +=  \
 ../src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/i2c_master.c \
 ../src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/i2c_master_interrupt.c \
 ../src/ASF/sam0/drivers/sercom/spi/spi.c \
+../src/door.c \
 ../src/wifi_nmi/host_drv/bsp/source/nm_bsp_samd21.c \
 ../src/wifi_nmi/host_drv/bus_wrapper/source/nm_bus_wrapper_samd21.c \
 ../src/wifi_nmi/host_drv/common/source/nm_common.c \
@@ -190,6 +191,7 @@ src/ASF/sam0/components/sensor/at30tse75x/at30tse75x.o \
 src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/i2c_master.o \
 src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/i2c_master_interrupt.o \
 src/ASF/sam0/drivers/sercom/spi/spi.o \
+src/door.o \
 src/wifi_nmi/host_drv/bsp/source/nm_bsp_samd21.o \
 src/wifi_nmi/host_drv/bus_wrapper/source/nm_bus_wrapper_samd21.o \
 src/wifi_nmi/host_drv/common/source/nm_common.o \
@@ -233,6 +235,7 @@ src/ASF/sam0/components/sensor/at30tse75x/at30tse75x.o \
 src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/i2c_master.o \
 src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/i2c_master_interrupt.o \
 src/ASF/sam0/drivers/sercom/spi/spi.o \
+src/door.o \
 src/wifi_nmi/host_drv/bsp/source/nm_bsp_samd21.o \
 src/wifi_nmi/host_drv/bus_wrapper/source/nm_bus_wrapper_samd21.o \
 src/wifi_nmi/host_drv/common/source/nm_common.o \
@@ -276,6 +279,7 @@ src/ASF/sam0/components/sensor/at30tse75x/at30tse75x.d \
 src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/i2c_master.d \
 src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/i2c_master_interrupt.d \
 src/ASF/sam0/drivers/sercom/spi/spi.d \
+src/door.d \
 src/wifi_nmi/host_drv/bsp/source/nm_bsp_samd21.d \
 src/wifi_nmi/host_drv/bus_wrapper/source/nm_bus_wrapper_samd21.d \
 src/wifi_nmi/host_drv/common/source/nm_common.d \
@@ -319,6 +323,7 @@ src/ASF/sam0/components/sensor/at30tse75x/at30tse75x.d \
 src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/i2c_master.d \
 src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/i2c_master_interrupt.d \
 src/ASF/sam0/drivers/sercom/spi/spi.d \
+src/door.d \
 src/wifi_nmi/host_drv/bsp/source/nm_bsp_samd21.d \
 src/wifi_nmi/host_drv/bus_wrapper/source/nm_bus_wrapper_samd21.d \
 src/wifi_nmi/host_drv/common/source/nm_common.d \
@@ -451,6 +456,8 @@ LIB_DEP+=
 
 
 
+
+
 src/ASF/sam0/components/sensor/at30tse75x/%.o: ../src/ASF/sam0/components/sensor/at30tse75x/%.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 4.8.3
@@ -466,6 +473,13 @@ src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21/%.o: ../src/ASF/sam0/drivers/serc
 	
 
 src/ASF/sam0/drivers/sercom/spi/%.o: ../src/ASF/sam0/drivers/sercom/spi/%.c
+	@echo Building file: $<
+	@echo Invoking: ARM/GNU C Compiler : 4.8.3
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\ARM GCC\Native\4.8.1429\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMD21J18A__ -DDEBUG -DTC_ASYNC=true -DBOARD=SAMD21_XPLAINED_PRO -D__SAMD21J18A__ -DARM_MATH_CM0=true -DEXTINT_CALLBACK_MODE=true -DUSART_CALLBACK_MODE=true -DSYSTICK_MODE -DEDGE_INTERRUPT -DSPI_CALLBACK_MODE=false -DI2C_MASTER_CALLBACK_MODE=true  -I"../sam0/applications/getting-started/samd21j18a_samd21_xplained_pro" -I"../src/ASF/sam0/utils/header_files" -I"../src/ASF/sam0/utils/cmsis/samd21/include/component" -I"../src/ASF/common/utils" -I"../src/ASF/sam0/drivers/tc" -I"../src/ASF/sam0/drivers/system/pinmux" -I"../src/ASF/common2/services/delay/sam0" -I"../src/ASF/common/boards" -I"../src/ASF/sam0/drivers/port" -I"../src/ASF/sam0/utils/stdio/stdio_serial" -I"../src/ASF/sam0/drivers/system/clock/clock_samd21_r21" -I"../src/ASF/common2/services/delay" -I"../src/ASF/sam0/drivers/sercom/usart" -I"../src/ASF/sam0/boards" -I"../src/ASF/thirdparty/CMSIS/Include" -I"../src/ASF/sam0/utils" -I"../src/config" -I"../src/ASF/thirdparty/CMSIS/Lib/GCC" -I"../src/ASF/sam0/drivers/system/interrupt/system_interrupt_samd21" -I"../src/ASF/sam0/utils/cmsis/samd21/include/pio" -I"../src/ASF/sam0/boards/samd21_xplained_pro" -I"../src" -I"../src/ASF/sam0/drivers/sercom" -I"../src/ASF/sam0/utils/preprocessor" -I"../src/ASF/sam0/utils/cmsis/samd21/include" -I"../src/ASF/sam0/drivers/system" -I"../src/ASF/common/services/serial" -I"../src/ASF/sam0/drivers/extint" -I"../src/ASF/sam0/utils/cmsis/samd21/source" -I"../src/ASF/sam0/drivers/system/clock" -I"../src/ASF/sam0/drivers/system/interrupt" -I"../src/ASF/sam0/applications/getting-started/samd21j18a_samd21_xplained_pro" -I"../src/ASF/sam0/utils/cmsis/samd21/include/instance" -I"../src/wifi_nmi/host_drv" -I"../src/wifi_nmi/common/host_fw" -I"../src/ASF/sam0/drivers/sercom/spi" -I"../src/ASF/sam0/components/sensor/at30tse75x" -I"../src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21" -I"../src/ASF/sam0/drivers/sercom/i2c"  -O0 -fdata-sections -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -pipe -fno-strict-aliasing -Wall -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -std=gnu99 -ffunction-sections -fdata-sections -Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int -Wmain -Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs -Wunused -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wundef -Wshadow -Wbad-function-cast -Wwrite-strings -Wsign-compare -Waggregate-return  -Wmissing-declarations -Wformat -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Wlong-long -Wunreachable-code -Wcast-align --param max-inline-insns-single=500 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+src/%.o: ../src/%.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 4.8.3
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\ARM GCC\Native\4.8.1429\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMD21J18A__ -DDEBUG -DTC_ASYNC=true -DBOARD=SAMD21_XPLAINED_PRO -D__SAMD21J18A__ -DARM_MATH_CM0=true -DEXTINT_CALLBACK_MODE=true -DUSART_CALLBACK_MODE=true -DSYSTICK_MODE -DEDGE_INTERRUPT -DSPI_CALLBACK_MODE=false -DI2C_MASTER_CALLBACK_MODE=true  -I"../sam0/applications/getting-started/samd21j18a_samd21_xplained_pro" -I"../src/ASF/sam0/utils/header_files" -I"../src/ASF/sam0/utils/cmsis/samd21/include/component" -I"../src/ASF/common/utils" -I"../src/ASF/sam0/drivers/tc" -I"../src/ASF/sam0/drivers/system/pinmux" -I"../src/ASF/common2/services/delay/sam0" -I"../src/ASF/common/boards" -I"../src/ASF/sam0/drivers/port" -I"../src/ASF/sam0/utils/stdio/stdio_serial" -I"../src/ASF/sam0/drivers/system/clock/clock_samd21_r21" -I"../src/ASF/common2/services/delay" -I"../src/ASF/sam0/drivers/sercom/usart" -I"../src/ASF/sam0/boards" -I"../src/ASF/thirdparty/CMSIS/Include" -I"../src/ASF/sam0/utils" -I"../src/config" -I"../src/ASF/thirdparty/CMSIS/Lib/GCC" -I"../src/ASF/sam0/drivers/system/interrupt/system_interrupt_samd21" -I"../src/ASF/sam0/utils/cmsis/samd21/include/pio" -I"../src/ASF/sam0/boards/samd21_xplained_pro" -I"../src" -I"../src/ASF/sam0/drivers/sercom" -I"../src/ASF/sam0/utils/preprocessor" -I"../src/ASF/sam0/utils/cmsis/samd21/include" -I"../src/ASF/sam0/drivers/system" -I"../src/ASF/common/services/serial" -I"../src/ASF/sam0/drivers/extint" -I"../src/ASF/sam0/utils/cmsis/samd21/source" -I"../src/ASF/sam0/drivers/system/clock" -I"../src/ASF/sam0/drivers/system/interrupt" -I"../src/ASF/sam0/applications/getting-started/samd21j18a_samd21_xplained_pro" -I"../src/ASF/sam0/utils/cmsis/samd21/include/instance" -I"../src/wifi_nmi/host_drv" -I"../src/wifi_nmi/common/host_fw" -I"../src/ASF/sam0/drivers/sercom/spi" -I"../src/ASF/sam0/components/sensor/at30tse75x" -I"../src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21" -I"../src/ASF/sam0/drivers/sercom/i2c"  -O0 -fdata-sections -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -pipe -fno-strict-aliasing -Wall -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -std=gnu99 -ffunction-sections -fdata-sections -Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int -Wmain -Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs -Wunused -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wundef -Wshadow -Wbad-function-cast -Wwrite-strings -Wsign-compare -Waggregate-return  -Wmissing-declarations -Wformat -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Wlong-long -Wunreachable-code -Wcast-align --param max-inline-insns-single=500 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -613,13 +627,6 @@ src/ASF/sam0/utils/stdio/%.o: ../src/ASF/sam0/utils/stdio/%.c
 	
 
 src/ASF/sam0/utils/syscalls/gcc/%.o: ../src/ASF/sam0/utils/syscalls/gcc/%.c
-	@echo Building file: $<
-	@echo Invoking: ARM/GNU C Compiler : 4.8.3
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\ARM GCC\Native\4.8.1429\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMD21J18A__ -DDEBUG -DTC_ASYNC=true -DBOARD=SAMD21_XPLAINED_PRO -D__SAMD21J18A__ -DARM_MATH_CM0=true -DEXTINT_CALLBACK_MODE=true -DUSART_CALLBACK_MODE=true -DSYSTICK_MODE -DEDGE_INTERRUPT -DSPI_CALLBACK_MODE=false -DI2C_MASTER_CALLBACK_MODE=true  -I"../sam0/applications/getting-started/samd21j18a_samd21_xplained_pro" -I"../src/ASF/sam0/utils/header_files" -I"../src/ASF/sam0/utils/cmsis/samd21/include/component" -I"../src/ASF/common/utils" -I"../src/ASF/sam0/drivers/tc" -I"../src/ASF/sam0/drivers/system/pinmux" -I"../src/ASF/common2/services/delay/sam0" -I"../src/ASF/common/boards" -I"../src/ASF/sam0/drivers/port" -I"../src/ASF/sam0/utils/stdio/stdio_serial" -I"../src/ASF/sam0/drivers/system/clock/clock_samd21_r21" -I"../src/ASF/common2/services/delay" -I"../src/ASF/sam0/drivers/sercom/usart" -I"../src/ASF/sam0/boards" -I"../src/ASF/thirdparty/CMSIS/Include" -I"../src/ASF/sam0/utils" -I"../src/config" -I"../src/ASF/thirdparty/CMSIS/Lib/GCC" -I"../src/ASF/sam0/drivers/system/interrupt/system_interrupt_samd21" -I"../src/ASF/sam0/utils/cmsis/samd21/include/pio" -I"../src/ASF/sam0/boards/samd21_xplained_pro" -I"../src" -I"../src/ASF/sam0/drivers/sercom" -I"../src/ASF/sam0/utils/preprocessor" -I"../src/ASF/sam0/utils/cmsis/samd21/include" -I"../src/ASF/sam0/drivers/system" -I"../src/ASF/common/services/serial" -I"../src/ASF/sam0/drivers/extint" -I"../src/ASF/sam0/utils/cmsis/samd21/source" -I"../src/ASF/sam0/drivers/system/clock" -I"../src/ASF/sam0/drivers/system/interrupt" -I"../src/ASF/sam0/applications/getting-started/samd21j18a_samd21_xplained_pro" -I"../src/ASF/sam0/utils/cmsis/samd21/include/instance" -I"../src/wifi_nmi/host_drv" -I"../src/wifi_nmi/common/host_fw" -I"../src/ASF/sam0/drivers/sercom/spi" -I"../src/ASF/sam0/components/sensor/at30tse75x" -I"../src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21" -I"../src/ASF/sam0/drivers/sercom/i2c"  -O0 -fdata-sections -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -pipe -fno-strict-aliasing -Wall -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -std=gnu99 -ffunction-sections -fdata-sections -Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int -Wmain -Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs -Wunused -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wundef -Wshadow -Wbad-function-cast -Wwrite-strings -Wsign-compare -Waggregate-return  -Wmissing-declarations -Wformat -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Wlong-long -Wunreachable-code -Wcast-align --param max-inline-insns-single=500 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-src/%.o: ../src/%.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 4.8.3
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\ARM GCC\Native\4.8.1429\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMD21J18A__ -DDEBUG -DTC_ASYNC=true -DBOARD=SAMD21_XPLAINED_PRO -D__SAMD21J18A__ -DARM_MATH_CM0=true -DEXTINT_CALLBACK_MODE=true -DUSART_CALLBACK_MODE=true -DSYSTICK_MODE -DEDGE_INTERRUPT -DSPI_CALLBACK_MODE=false -DI2C_MASTER_CALLBACK_MODE=true  -I"../sam0/applications/getting-started/samd21j18a_samd21_xplained_pro" -I"../src/ASF/sam0/utils/header_files" -I"../src/ASF/sam0/utils/cmsis/samd21/include/component" -I"../src/ASF/common/utils" -I"../src/ASF/sam0/drivers/tc" -I"../src/ASF/sam0/drivers/system/pinmux" -I"../src/ASF/common2/services/delay/sam0" -I"../src/ASF/common/boards" -I"../src/ASF/sam0/drivers/port" -I"../src/ASF/sam0/utils/stdio/stdio_serial" -I"../src/ASF/sam0/drivers/system/clock/clock_samd21_r21" -I"../src/ASF/common2/services/delay" -I"../src/ASF/sam0/drivers/sercom/usart" -I"../src/ASF/sam0/boards" -I"../src/ASF/thirdparty/CMSIS/Include" -I"../src/ASF/sam0/utils" -I"../src/config" -I"../src/ASF/thirdparty/CMSIS/Lib/GCC" -I"../src/ASF/sam0/drivers/system/interrupt/system_interrupt_samd21" -I"../src/ASF/sam0/utils/cmsis/samd21/include/pio" -I"../src/ASF/sam0/boards/samd21_xplained_pro" -I"../src" -I"../src/ASF/sam0/drivers/sercom" -I"../src/ASF/sam0/utils/preprocessor" -I"../src/ASF/sam0/utils/cmsis/samd21/include" -I"../src/ASF/sam0/drivers/system" -I"../src/ASF/common/services/serial" -I"../src/ASF/sam0/drivers/extint" -I"../src/ASF/sam0/utils/cmsis/samd21/source" -I"../src/ASF/sam0/drivers/system/clock" -I"../src/ASF/sam0/drivers/system/interrupt" -I"../src/ASF/sam0/applications/getting-started/samd21j18a_samd21_xplained_pro" -I"../src/ASF/sam0/utils/cmsis/samd21/include/instance" -I"../src/wifi_nmi/host_drv" -I"../src/wifi_nmi/common/host_fw" -I"../src/ASF/sam0/drivers/sercom/spi" -I"../src/ASF/sam0/components/sensor/at30tse75x" -I"../src/ASF/sam0/drivers/sercom/i2c/i2c_samd21_r21" -I"../src/ASF/sam0/drivers/sercom/i2c"  -O0 -fdata-sections -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -pipe -fno-strict-aliasing -Wall -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -std=gnu99 -ffunction-sections -fdata-sections -Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int -Wmain -Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs -Wunused -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wundef -Wshadow -Wbad-function-cast -Wwrite-strings -Wsign-compare -Waggregate-return  -Wmissing-declarations -Wformat -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Wlong-long -Wunreachable-code -Wcast-align --param max-inline-insns-single=500 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

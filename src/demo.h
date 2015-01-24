@@ -52,13 +52,13 @@ extern "C" {
 #endif
 
 /** SSID and passphrase of the network to connect to. */
-#define DEMO_WLAN_SSID						"Atmel_Network"
+#define DEMO_WLAN_SSID						"Procrastination"
 #define DEMO_WLAN_AUTH						M2M_WIFI_SEC_WPA_PSK
-#define	DEMO_WLAN_PSK						"AtmelFTW"
+#define	DEMO_WLAN_PSK						"zsertyuiop123"
 
 
 /** Sensor demo configuration. */
-#define DEMO_PRODUCT_NAME					"NMITemp1"
+#define DEMO_PRODUCT_NAME					"Doorman"
 /* Using broadcast address for simplicity. */
 #define DEMO_SERVER_IP						"255.255.255.255"
 #define DEMO_SERVER_PORT					(6666)

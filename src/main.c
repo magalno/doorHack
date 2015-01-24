@@ -117,6 +117,7 @@ void SysTick_Handler(void)
 int main(void)
 {
 	system_init();
+	system_interrupt_enable_global();
 
 	/* Initialize the UART console. */
 	configure_console();

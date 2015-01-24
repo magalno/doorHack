@@ -47,6 +47,7 @@
 #include <stdio.h>
 #include "asf.h"
 #include "demo.h"
+#include "door.h"
 #include "bsp/include/nm_bsp.h"
 #include "driver/include/m2m_wifi.h"
 #include "socket/include/socket.h"
@@ -146,7 +147,10 @@ static void m2m_wifi_socket_handler(SOCKET sock, uint8 u8Msg, void *pvMsg)
 				memcpy(&report, pstrRx->pu8Buffer, sizeof(t_msg_temp_report));
 				if (report.id0 == 0 && report.id1 == 2 && (strcmp((char *)report.name, DEMO_PRODUCT_NAME) == 0)) {
 					puts("wifi_nc_data_callback: received app message");
-					port_pin_set_output_level(LED_0_PIN, report.led ? true : false);
+					//port_pin_set_output_level(LED_0_PIN, report.led ? true : false);
+					port_pin_set_output_level(LED_0_PIN, false);
+					port_pin_set_output_level(DOOR_PIN, true);
+					door_timer_start();
 					delay = 0;
 				}
 
@@ -241,6 +245,8 @@ void demo_start(void)
 	
 	/* Turn LED0 off initially. */
 	port_pin_set_output_level(LED_0_PIN, true);
+	
+	door_init();
 
 	/* Initialize temperature sensor. */
 	at30tse_init();

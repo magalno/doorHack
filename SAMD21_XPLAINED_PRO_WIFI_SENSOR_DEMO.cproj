@@ -677,6 +677,12 @@
     <Compile Include="src\config\conf_wifi_m2m.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\door.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\door.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\wifi_nmi\host_drv\bsp\include\nm_bsp.h">
       <SubType>compile</SubType>
     </Compile>
